@@ -16,8 +16,8 @@ public class test_depth_node {
 	
 	
 	@BeforeAll
-	static void crearArboles() {
-		arbolEV1 = new BinaryTree<String>("1");
+	static void crearArboles() { // es estático porque sino da error
+		arbolEV1 = new BinaryTree<String>("0");
 		arbolEV2 = new BinaryTree<String>("1");
 		n2 = arbolEV2.insert("2", arbolEV2.getRoot(), true);
     	n3 = arbolEV2.insert("3", arbolEV2.getRoot(), false);
@@ -43,5 +43,40 @@ public class test_depth_node {
 	@Test
 	void caso3() {
 		assertThrows(Exception.class, () -> arbolEV1.depth(new Node<String>("11")));
+	}
+	
+	@Test
+	void caso4() {
+		assertThrows(Exception.class, () -> arbolEV1.depth(n5));
+	}
+	
+	@Test
+	void caso5() {
+		assertEquals(arbolEV2.depth(n8), 0);
+	}
+	
+	@Test
+	void caso6() {
+		assertEquals(arbolEV2.depth(n6), 1);
+	}
+	
+	@Test
+	void caso7() {
+		assertEquals(arbolEV2.depth(arbolEV2.getRoot()), 4);
+	}
+	
+	@Test
+	void caso8() {
+		assertThrows(Exception.class, () -> arbolEV2.depth(null));
+	}
+	
+	@Test
+	void caso9() {
+		assertThrows(Exception.class, () -> arbolEV2.depth(new Node<String>("11")));
+	}
+	
+	@Test
+	void caso10() {
+		assertThrows(Exception.class, () -> arbolEV2.depth(arbolEV1.getRoot()));
 	}
 }
