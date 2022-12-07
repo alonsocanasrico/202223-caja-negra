@@ -57,4 +57,17 @@ public class Test_equals {
 		Node<String> n20 = arbolEV2.insert("10", n17, true);
 		assertEquals(arbolEV1.equals(arbolEV2), false);
 	}
+	
+	@Test
+	void caso3() {
+		BinaryTree<String> arbolEV2 = new BinaryTree<String>("1");
+		Node<String> n12 = arbolEV2.insert("2", arbolEV2.getRoot(), true);
+		Node<String> n13 = arbolEV2.insert("4", arbolEV2.getRoot(), false);
+		assertEquals(arbolEV1.equals(arbolEV2), false);
+	}
+	
+	@Test
+	void caso4() {
+		assertEquals(arbolEV1.equals(arbolEV1.getSubTree(n4)), true);
+	}
 }
