@@ -35,7 +35,6 @@ public class test_getSubTree {
 	
 	@Test
 	void caso1() {
-//		assertEquals(arbolEV1.getSubTree(arbolEV1.getRoot()), new BinaryTree<String>("0"));
 		assertTrue(arbolEV1.getSubTree(arbolEV1.getRoot()).equals(new BinaryTree<String>("0")));
 	}
 	
