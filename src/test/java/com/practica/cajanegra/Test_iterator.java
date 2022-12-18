@@ -1,7 +1,6 @@
 package com.practica.cajanegra;
 
 import com.binarytree.BinaryTree;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class test_iterator {
+public class Test_iterator {
 
     private BinaryTree<String> arbol;
 
